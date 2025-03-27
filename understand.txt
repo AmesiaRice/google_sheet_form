@@ -1,0 +1,33 @@
+google-forms-clone/
+│── backend/                 # Node.js + Express (Handles Auth & Google Sheets API)
+│   ├── controllers/         # Business logic for authentication & Sheets
+│   │   ├── authController.js
+│   │   ├── sheetsController.js
+│   ├── middlewares/         # Middleware for authentication
+│   │   ├── authMiddleware.js
+│   ├── routes/              # API routes
+│   │   ├── authRoutes.js
+│   │   ├── sheetsRoutes.js
+│   ├── config/              # Config files (OAuth, Google Sheets API)
+│   │   ├── passportSetup.js
+│   │   ├── googleSheets.js
+│   ├── models/              # If we use a database later
+│   ├── server.js            # Main entry point for backend
+│
+│── frontend/                # React (Handles UI & Form Submission)
+│   ├── src/
+│   │   ├── components/      # Reusable UI components
+│   │   │   ├── LoginButton.js
+│   │   │   ├── LogoutButton.js
+│   │   │   ├── FormComponent.js
+│   │   │   ├── Dashboard.js
+│   │   ├── pages/           # Different pages
+│   │   │   ├── HomePage.js
+│   │   │   ├── LoginPage.js
+│   │   ├── context/         # Global authentication state
+│   │   │   ├── AuthContext.js
+│   │   ├── App.js           # Main entry point for React
+│   │   ├── index.js         # React DOM entry point
+│   ├── package.json
+│── .env                     # Environment variables
+│── README.md
