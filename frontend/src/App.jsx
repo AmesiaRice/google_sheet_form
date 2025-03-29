@@ -10,6 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import toast from 'react-hot-toast';
 
 import api from './api/axios';
+import EnrollmentForm from './components/EnrollForm';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -26,6 +27,7 @@ const App = () => {
       .catch(err => {
         setUser(null);
         setLoading(false);
+        toast.error("Logged in error! 👋");
       });
   }, []);
 
@@ -54,7 +56,6 @@ const App = () => {
   };
 
   // ✅ Logged in? Show full app
-  console.log(user,"user")
   return (
     <div className="flex">
       <Sidebar />
@@ -63,7 +64,8 @@ const App = () => {
         <div className="p-6">
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/form" element={<GoogleForm />} />
+            {/* <Route path="/form" element={<GoogleForm />} /> */}
+            <Route path="/form" element={<EnrollmentForm/>} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
